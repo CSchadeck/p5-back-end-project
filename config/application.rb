@@ -30,7 +30,8 @@ module ReactRailsApiProjectTemplate
     config.action_dispatch.cookies_same_site_protection = :strict
 
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
+  
+
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -46,3 +47,4 @@ module ReactRailsApiProjectTemplate
     config.api_only = true
   end
 end
+
