@@ -1,5 +1,0 @@
-class MembersController < ApplicationController
-
-
-    
-end 
