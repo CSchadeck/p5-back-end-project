@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
   resource :sessions
   resources :connections, only:[:index, :show, :update]
   resources :requests, only:[:index, :show, :update, :create]

@@ -1,5 +1,5 @@
 class ConnectionsController < ApplicationController
-
+    skip_before_action :authorize, only:[:create, :index]
  
     def index
         render json: Connection.all
