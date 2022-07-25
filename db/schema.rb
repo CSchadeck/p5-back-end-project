@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 2022_07_21_174307) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "members", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "requests", force: :cascade do |t|
     t.string "title"
     t.integer "user_id"
@@ -46,4 +54,3 @@ ActiveRecord::Schema.define(version: 2022_07_21_174307) do
   end
 
 end
-
