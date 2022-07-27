@@ -10,6 +10,12 @@ class ConnectionsController < ApplicationController
         render json: connection
     end
 
+    def create
+        connection = Connection.create!(connection_params)
+        session[:user_id] = user.id
+        render json: user, status: :created
+    end
+    
     def update
     conncetion = Connection.find(params[:id])
         conncetion.update!(connection_params)
