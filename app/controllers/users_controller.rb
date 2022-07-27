@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
-    skip_before_action :authorize, only: [:create, :index]
+    skip_before_action :authorize, only: [:create, :index, :showWithOutLogIn]
 
     def index
         render json: User.all
+    end
+
+    def showWithOutLogIn
+        render json: User.find(params[:id])
     end
 
     def show     
