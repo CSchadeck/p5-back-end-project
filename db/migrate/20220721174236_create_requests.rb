@@ -3,7 +3,7 @@ class CreateRequests < ActiveRecord::Migration[6.1]
     create_table :requests do |t|
       t.string :title
       t.integer :user_id
-      t.string :image
+      t.string :image_url
       t.text :description
       t.datetime :start_date
       t.datetime :end_date
