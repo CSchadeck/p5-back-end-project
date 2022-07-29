@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    #skip_before_action :authorize, only: [:create, :index,,  :showWithOutLogIn]
+    skip_before_action :authorize, only: [:create, :index, :update , :show, :showWithOutLogIn]
 
     def index
         render json: User.all
