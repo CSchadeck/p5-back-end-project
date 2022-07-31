@@ -37,6 +37,7 @@ class UsersController < ApplicationController
         if @user
             render json: @user, except: [:password_digest, :created_at, :updated_at], statis: 200
         end
+    end
 
     private
     def user_params
