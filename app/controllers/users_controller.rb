@@ -11,7 +11,14 @@ class UsersController < ApplicationController
 
     def show     
        # user = User.find_by(id: session[:user_id])
-        render json: @current_user
+       # render json: @current_user
+       user = User.find_by(id: session[:user_id])
+         if user
+          render json: user
+         else
+            render json: { error: "Not authorized" }, status: :unauthorized
+          end
+        end
     end
     
     def update
@@ -34,7 +41,7 @@ class UsersController < ApplicationController
     end
 
     def current_user
-        @user= User.find_by(id: session[:user_id])
+        @user= User.find_by(id: session[:user_id],user_perams)
         if @user
             render json: @user,  status: 200
         end
