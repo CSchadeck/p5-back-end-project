@@ -31,12 +31,4 @@ use Rack::Cors do
         :methods => [:get, :post, :delete, :put, :options]
   end
 
-  allow do
-    origins ENV['CORS_ORIGINS'].split(',').map { |origin| origin.strip }
-
-    resource '*',
-      headers: :any,
-      methods: [:get, :post, :put, :patch, :delete, :options, :head]
-  end
-
 end
