@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :connections, only:[:index, :show, :update, :create]
   resources :requests, only:[:index, :show, :update, :destroy, :create]
   resources :users
+  get '/current_user', to: 'users#current_user'
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
   get "/users/:id", to: "users#showWithOutLogIn"
