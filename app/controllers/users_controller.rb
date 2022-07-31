@@ -32,10 +32,11 @@ class UsersController < ApplicationController
           render json: { error: user.errors.full_messages }, status: :unprocessable_entity
        end
     end
+
     def current_user
         @user= User.find_by(id: session[:user_id])
         if @user
-            render json: @user, except: [:password_digest, :created_at, :updated_at], statis: 200
+            render json: @user,  status: 200
         end
     end
 
