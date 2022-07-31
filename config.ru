@@ -17,4 +17,26 @@ use Rack::Cors do
        :headers => :any,
        :methods => [:get, :post, :delete, :put, :options]
  end
+ allow do
+    origins 'http://localhost:3001'
+    resource '*',
+        :headers => :any,
+        :methods => [:get, :post, :delete, :put, :options]
+  end
+
+ allow do
+    origins 'https://obscure-headland-31666.herokuapp.com'
+    resource '*',
+        :headers => :any,
+        :methods => [:get, :post, :delete, :put, :options]
+  end
+
+  allow do
+    origins ENV['CORS_ORIGINS'].split(',').map { |origin| origin.strip }
+
+    resource '*',
+      headers: :any,
+      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+  end
+
 end
