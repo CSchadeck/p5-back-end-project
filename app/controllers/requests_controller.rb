@@ -20,6 +20,11 @@ class RequestsController < ApplicationController
         render json: request, status: :created
     end
 
+    def destroy
+        request = Request.find(params[:id])
+        request.destroy
+        head :no_content
+    end
 
     private
 
