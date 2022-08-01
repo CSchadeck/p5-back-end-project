@@ -1,5 +1,5 @@
 class ConnectionsController < ApplicationController
-    skip_before_action :authorize, only:[:create, :index, :update]
+    #skip_before_action :authorize, only:[:create, :index, :update]
  
     def index
         render json: Connection.all
@@ -15,7 +15,7 @@ class ConnectionsController < ApplicationController
         session[:user_id] = user.id
         render json: user, status: :created
     end
-    
+
     def update
     conncetion = Connection.find(params[:id])
         conncetion.update!(connection_params)

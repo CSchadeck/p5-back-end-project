@@ -16,7 +16,7 @@ class UsersController < ApplicationController
            # else
              #   render json: {error: "User not found"}, status: :not_found
             #end
-            uers = User. user = User.find_by(id: session[:user_id])
+            users = User. user = User.find_by(id: session[:user_id])
                   render json: user,status: :ok
         end
     
