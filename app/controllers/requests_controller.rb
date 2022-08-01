@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-    skip_before_action :authorize, only:[:create, :show,:index, :update]
+    #skip_before_action :authorize, only:[:create, :show,:index, :update]
     def index
         render json: Request.all
     end
