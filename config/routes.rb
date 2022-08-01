@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # resource :sessions
   resources :connections, only:[:index, :show, :update, :create]
   resources :requests, only:[:index, :show, :update, :destroy, :create]
-  resources :users
+  resources :users, only:[:index, :show, :showWithOutLogIn, :update, :create]
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
   get "/users/:id", to: "users#showWithOutLogIn"

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-   # skip_before_action :authorize, only: [:create, :index, :update , :show, :showWithOutLogIn]
+    skip_before_action :authorize
 
         def index
             render json: User.all
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
         end
         
         def show
-            user = User.find_by_id(params[:id])
+            user = User.find(params[:id])
             if user
                 render json: user.to_json 
             else
