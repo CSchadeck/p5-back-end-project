@@ -10,14 +10,12 @@ class UsersController < ApplicationController
         end
         
         def show
-            #user = User.find(params[:id])
-           # if user
-              #  render json: user.to_json 
-           # else
-             #   render json: {error: "User not found"}, status: :not_found
-            #end
-            users = User. user = User.find_by(id: session[:user_id])
-                  render json: user,status: :ok
+            user = User.find(params[:id])
+            if user
+                render json: user.to_json 
+            else
+                render json: {error: "User not found"}, status: :not_found
+            end
         end
     
         def create
@@ -31,7 +29,7 @@ class UsersController < ApplicationController
         end
 
         def current_user
-            user= User.find_by(id: session[:user_id])
+            @user= User.find_by(id: session[:user_id])
             if @user
                 render json: @user,  status: 200
             end
