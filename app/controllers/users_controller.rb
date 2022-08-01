@@ -9,18 +9,18 @@ class UsersController < ApplicationController
             render json: User.find(params[:id])
         end
         
-        # def show
-        #     user = User.find(params[:id])
-        #     if user
-        #         render json: user.to_json 
-        #     else
-        #         render json: {error: "User not found"}, status: :not_found
-        #     end
-        # end
-
         def show
-            render json: User.find(session[:user_id])
-          end
+            user = User.find(params[:id])
+            if user
+                render json: user.to_json 
+            else
+                render json: {error: "User not found"}, status: :not_found
+            end
+        end
+
+        # def show
+        #     render json: User.find(session[:user_id])
+        #   end
 
     
         def create
