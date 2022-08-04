@@ -49,7 +49,7 @@ class UsersController < ApplicationController
 
         def destroy
             users = User.find(params[:id])
-            request.destroy
+            user.destroy
             head :no_content
         end
 
