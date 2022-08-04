@@ -27,4 +27,4 @@ User.create!(username: "DylanPickle", password: "rabbithole", email:"dyle@pickel
  Connection.create!(user_id:5 , request_id:5) 
 
 
- puts "✅ Done seeding!"
+ puts "✅ Done seeding!"x
