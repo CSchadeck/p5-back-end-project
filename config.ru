@@ -27,7 +27,7 @@ use Rack::Cors do
   end
 
  allow do
-    origins 'https://obscure-headland-31666.herokuapp.com'
+    origins 'https://condopet-bend.onrender.com'
     resource '*',
         :headers => :any,
         :methods => [:get, :post, :delete, :put, :options,],
