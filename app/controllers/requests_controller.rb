@@ -1,4 +1,5 @@
 class RequestsController < ApplicationController
+    #skip_before_action :authorize, only:[:create, :show,:index, :update]
     def index
         render json: Request.all
     end
@@ -15,10 +16,15 @@ class RequestsController < ApplicationController
     end
 
     def create
-        request = Request.create!(request_params)
+        request = Request.create!(request_create_params)
         render json: request, status: :created
     end
 
+    def destroy
+        request = Request.find(params[:id])
+        request.destroy
+        head :no_content
+    end
 
     private
 
@@ -26,4 +32,8 @@ class RequestsController < ApplicationController
         params.permit(:title, :user_id, :image, :description, :start_date, :end_date, :accepted, :accepted_by)
     end
 
+
+    def request_create_params
+        params.permit(:title, :user_id, :image, :description, :start_date, :end_date)
+    end
 end 

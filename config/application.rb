@@ -27,10 +27,11 @@ module ReactRailsApiProjectTemplate
 
     # Use SameSite=Strict for all cookies to help protect against CSRF
     # https://owasp.org/www-community/SameSite
-    config.action_dispatch.cookies_same_site_protection = :strict
+    config.action_dispatch.cookies_same_site_protection = :lax
 
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
+  
+
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -46,3 +47,4 @@ module ReactRailsApiProjectTemplate
     config.api_only = true
   end
 end
+
